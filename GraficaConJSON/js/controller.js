@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    google.charts.load('current', {
-        packages: ['corechart', 'line']
-    });
-    google.charts.setOnLoadCallback(drawChartLine);
+    google.charts.load('current', { packages: ['corechart'] });
+
+    google.charts.setOnLoadCallback(drawChart);
+
 });
 
-function drawChartLine() {
+function drawChart() {
 
     var options = {
         hAxis: {
@@ -25,7 +25,7 @@ function drawChartLine() {
 
     var jsonData = $.ajax(
         {
-            url: "control/ctrlBuscaProducto.php",
+            url: "control/index.php",
             dataType: "json",
             success: {
                 function(data) {
@@ -36,14 +36,14 @@ function drawChartLine() {
 
                     var data = new google.visualization.DataTable();
                     //Columnas con datos a evaluar
-                    data.addColumn('string', 'Producto');
-                    data.addColumn('number', 'Precio');
+                    data.addColumn('datetime', 'Date_Time');
+                    data.addColumn('number', 'Temperature');
 
                     //Se agregan filas de datos
                     data.addRows(c.length);
                     for (var i = 0; i < c.length; i++) {
-                        data.setCell(i, 0, c[i].nombre);
-                        data.setCell(i, 1, c[i].precio);
+                        data.setCell(i, 0, c[i].Date_Time);
+                        data.setCell(i, 1, c[i].Temperature);
                     }
 
                     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
