@@ -23,24 +23,8 @@ labels: titulo,
 datasets: [{
   label: 'My First Dataset',
   data: cantidad,
-  backgroundColor: [
-    'rgba(255, 99, 132, 0.2)',
-    'rgba(255, 159, 64, 0.2)',
-    'rgba(255, 205, 86, 0.2)',
-    'rgba(75, 192, 192, 0.2)',
-    'rgba(54, 162, 235, 0.2)',
-    'rgba(153, 102, 255, 0.2)',
-    'rgba(201, 203, 207, 0.2)'
-  ],
-  borderColor: [
-    'rgb(255, 99, 132)',
-    'rgb(255, 159, 64)',
-    'rgb(255, 205, 86)',
-    'rgb(75, 192, 192)',
-    'rgb(54, 162, 235)',
-    'rgb(153, 102, 255)',
-    'rgb(201, 203, 207)'
-  ],
+  backgroundColor: generadorColor(data.length),
+  borderColor: generadorColor(data.length),
   borderWidth: 1,
   borderRadius:30, //ovalar la gráfica solo de la parte superior
   borderSkipped:false // mostrar el ovalado completo
@@ -64,3 +48,27 @@ options: {
 
     })
  }
+
+ function aleatorio(inferior,superior){
+  numPosibilidades = superior - inferior
+  aleat = Math.random() * numPosibilidades
+  aleat = Math.floor(aleat)
+  return parseInt(inferior) + aleat
+}
+
+function generadorColor(limite){
+  hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F")
+  color_aleatorio = "#";
+  var colores = [];
+  for(j=0;j<limite; j++){
+  for (i=0;i<6;i++){
+     posarray = aleatorio(0,hexadecimal.length);
+     color_aleatorio += hexadecimal[posarray];
+     
+  }
+colores.push(color_aleatorio);
+color_aleatorio = "#";
+}
+console.log(colores);
+  return colores;
+}
