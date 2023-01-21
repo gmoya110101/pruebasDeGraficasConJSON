@@ -1,5 +1,5 @@
 /* 
-Titulo:Gráfico de barras utilizando JSON para extrear datos 
+Titulo:Gráfico de barras utilizando JSON para extraer datos 
 
 Objetivo: Representar un gráfico de barras extrayendo datos de MySQL y convirtiendolos a codigo JSON
 
@@ -9,7 +9,7 @@ Autores: Alan Mitchell Velasco Gonzalez y Gerardo Iturribarria Moya
 
 function CargarDatosGraficoBar(){
     $.ajax({
-        url:'controlador/controlador_grafico.php',
+        url:'../backEnd/controlador/controlador_grafico.php',
         type:'POST'
 
     }).done(function(resp){
