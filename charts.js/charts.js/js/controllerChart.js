@@ -1,3 +1,12 @@
+/* 
+Titulo:Gráfico de barras utilizando JSON para extrear datos 
+
+Objetivo: Representar un gráfico de barras extrayendo datos de MySQL y convirtiendolos a codigo JSON
+
+Autores: Alan Mitchell Velasco Gonzalez y Gerardo Iturribarria Moya 
+
+*/
+
 function CargarDatosGraficoBar(){
     $.ajax({
         url:'controlador/controlador_grafico.php',
@@ -21,7 +30,7 @@ var ctx = document.getElementById('myChart3').getContext('2d');
 var data ={
 labels: titulo,
 datasets: [{
-  label: 'My First Dataset',
+  label: 'Datos',
   data: cantidad,
   backgroundColor: generadorColor(data.length),
   borderColor: generadorColor(data.length),
