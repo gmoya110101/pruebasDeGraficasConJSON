@@ -1,3 +1,12 @@
+/* 
+Titulo:Gráfico de barras en ApexCharts utilizando JSON para extraer datos 
+
+Objetivo: Representar un gráfico de barras extrayendo datos de MySQL y convirtiendolos a codigo JSON
+
+Autores: Alan Mitchell Velasco Gonzalez y Gerardo Iturribarria Moya 
+
+*/
+
 $.ajax({
     url: '../backEnd/controlador/controlador_grafico.php',
     type: 'POST'

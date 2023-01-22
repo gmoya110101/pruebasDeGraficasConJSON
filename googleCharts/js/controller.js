@@ -1,3 +1,11 @@
+/* 
+Titulo:Gráfico de barras en GoogleCharts utilizando JSON para extraer datos 
+
+Objetivo: Representar un gráfico de barras extrayendo datos de MySQL y convirtiendolos a codigo JSON
+
+Autores: Alan Mitchell Velasco Gonzalez y Gerardo Iturribarria Moya 
+
+*/
 google.charts.load('current', { packages: ['corechart', 'bar'] });
 
 // Set a callback to run when the Google Visualization API is loaded.

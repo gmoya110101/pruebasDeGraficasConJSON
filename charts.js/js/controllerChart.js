@@ -1,5 +1,5 @@
 /* 
-Titulo:Gráfico de barras utilizando JSON para extraer datos 
+Titulo:Gráfico de barras en Charts utilizando JSON para extraer datos 
 
 Objetivo: Representar un gráfico de barras extrayendo datos de MySQL y convirtiendolos a codigo JSON
 
@@ -43,7 +43,7 @@ datasets: [{
 
 //config
 const config =new Chart (ctx, {
-type: 'bar',
+type: 'line',
  data,
 options: {
   scales: {
